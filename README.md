@@ -1,7 +1,7 @@
 Open Simulation Interface (OSI)
 ===============================
 
-[![Travis Build Status](https://travis-ci.org/OpenSimulationInterface/open-simulation-interface.svg?branch=master)](https://travis-ci.org/OpenSimulationInterface/open-simulation-interface)
+[![Travis Build Status](https://travis-ci.org/vkresch/open-simulation-interface.svg?branch=master)](https://travis-ci.org/vkresch/open-simulation-interface)
 
 [Online Doxygen Documentation](https://opensimulationinterface.github.io/open-simulation-interface/)
 

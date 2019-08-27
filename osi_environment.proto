@@ -69,7 +69,7 @@ message EnvironmentalConditions
     //
     optional Fog fog = 7;
 
-    // Definition of discretized precipitation states according to [1].
+    // TEST TEST Definition of discretized precipitation states according to [1].
     // (I = Intensity of precipitation in mm per hour [mm/h])
     //
     // \par References:
