@@ -22,9 +22,8 @@ before_install:
     - DEPS_DIR="${HOME}/deps"
     - mkdir -p "${DEPS_DIR}"
     - cd "${DEPS_DIR}"
-    - sudo apt-get install python-pip python3-pip
-    - sudo pip install protobuf 
-    - sudo pip3 install protobuf 
+    - sudo apt-get install python3-pip
+    - sudo pip3 install protobuf==3.2.0
 
 # Install necessary packages.
 install:
@@ -35,10 +34,10 @@ install:
         export PATH=${DEPS_DIR}/cmake/bin:${PATH}
 
     # Install a recent version of the Protobuf
-    - |
-        PROTOBUF_URL="https://github.com/google/protobuf/releases/download/v3.2.0/protobuf-cpp-3.2.0.tar.gz"
-        if [ ! -f ${DEPS_DIR}/protobuf/install/bin/protoc ] ; then mkdir -p protobuf ; travis_retry wget --no-check-certificate --quiet -O - ${PROTOBUF_URL} | tar --strip-components=1 -xz -C protobuf ; cd protobuf ; ./configure --prefix=${DEPS_DIR}/protobuf/install ; make ; make install ; fi
-        export PATH=${DEPS_DIR}/protobuf/install/bin:${PATH}
+    # - |
+    #     PROTOBUF_URL="https://github.com/google/protobuf/releases/download/v3.2.0/protobuf-cpp-3.2.0.tar.gz"
+    #     if [ ! -f ${DEPS_DIR}/protobuf/install/bin/protoc ] ; then mkdir -p protobuf ; travis_retry wget --no-check-certificate --quiet -O - ${PROTOBUF_URL} | tar --strip-components=1 -xz -C protobuf ; cd protobuf ; ./configure --prefix=${DEPS_DIR}/protobuf/install ; make ; make install ; fi
+    #     export PATH=${DEPS_DIR}/protobuf/install/bin:${PATH}
         
     # Install proto2cpp for doxygen
     - |
@@ -70,10 +69,10 @@ before_script:
 # Run the build script and generate documentation.
 script:
     - mkdir -p build
-    - cd build
-    - cmake -D CMAKE_PREFIX_PATH:PATH=${DEPS_DIR}/protobuf/install -D CMAKE_INSTALL_PREFIX:PATH=${TESTINST_DIR} ..
-    - cmake --build .
-    - cd ..
+    # - cd build
+    # - cmake -D CMAKE_PREFIX_PATH:PATH=${DEPS_DIR}/protobuf/install -D CMAKE_INSTALL_PREFIX:PATH=${TESTINST_DIR} ..
+    # - cmake --build .
+    # - cd ..
     - python test_cases.py
     - python setup.py build
     - python setup.py sdist
@@ -94,11 +93,11 @@ script:
     - python test_cases_doc.py
     - mv VERSION.SAVED VERSION
     - sh convert-to-proto3.sh
-    - mkdir -p build3
-    - cd build3
-    - cmake -D CMAKE_PREFIX_PATH:PATH=${DEPS_DIR}/protobuf/install ..
-    - cmake --build .
-    - cd ..
+    # - mkdir -p build3
+    # - cd build3
+    # - cmake -D CMAKE_PREFIX_PATH:PATH=${DEPS_DIR}/protobuf/install ..
+    # - cmake --build .
+    # - cd ..
 
 # Deploy the documentation on github (only for master branch).
 deploy:
