@@ -84,7 +84,7 @@ script:
     - ls
     - cd builddoxy
     - cmake -D FILTER_PROTO2CPP_PY_PATH=${DEPS_DIR}/proto2cpp -D CMAKE_PREFIX_PATH:PATH=${DEPS_DIR}/protobuf/install ..
-    # - sed '6iEXCLUDE   = "${TRAVIS_BUILD_DIR}/build"' Doxyfile > Doxyfile2 && mv Doxyfile2 Doxyfile
+    - sed '6iEXCLUDE   = "${TRAVIS_BUILD_DIR}/builddoxy/"' Doxyfile > Doxyfile2 && mv Doxyfile2 Doxyfile
     - cat Doxyfile
     - doxygen
     - cd ..
