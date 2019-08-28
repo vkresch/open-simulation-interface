@@ -1,4 +1,5 @@
 # Source: https://github.com/boostorg/hana/blob/master/.travis.yml
+dist: bionic
 
 # Use C++ build environment.
 language: cpp

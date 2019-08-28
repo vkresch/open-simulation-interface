@@ -63,7 +63,7 @@ message EnvironmentalConditions
 
     // Description of the precipitation.
     //
-    // optional Precipitation precipitation = 6;
+    optional Precipitation precipitation = 6;
 
     // Description of the fog.
     //
