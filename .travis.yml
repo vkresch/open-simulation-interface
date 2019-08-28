@@ -21,18 +21,14 @@ before_install:
     - DEPS_DIR="${HOME}/deps"
     - mkdir -p "${DEPS_DIR}"
     - cd "${DEPS_DIR}"
-    - wget http://doxygen.nl/files/doxygen-1.8.16.linux.bin.tar.gz
-    - gunzip doxygen-1.8.16.linux.bin.tar.gz
-    - tar xf doxygen-1.8.16.linux.bin.tar
-    - cd doxygen-1.8.16/
-    - mkdir build
-    - cd build
-    - cmake -G "Unix Makefiles" ..
-    - cmake -L ..
-    - make
-    - ./configure
-    - make install    
-    - sudo apt-get install -y doxygen-doc doxygen-latex doxygen-gui graphviz
+    # - git clone https://github.com/doxygen/doxygen.git
+    # - cd doxygen
+    # - mkdir build
+    # - cd build
+    # - cmake -G "Unix Makefiles" ..
+    # - make
+    # - make install
+    # - sudo apt-get install -y doxygen-doc doxygen-latex doxygen-gui graphviz
 
 # Install necessary packages.
 install:
@@ -62,14 +58,14 @@ env:
     - GH_REPO_REF="github.com/$GH_REPO_ORG/$GH_REPO_NAME.git"
     
 # Addons necessary for documentation.
-# addons:
-#     apt:
-#         packages:
-#         - doxygen
-#         - doxygen-doc
-#         - doxygen-latex
-#         - doxygen-gui
-#         - graphviz
+addons:
+    apt:
+        packages:
+        - doxygen
+        - doxygen-doc
+        - doxygen-latex
+        - doxygen-gui
+        - graphviz
 
 # Change directory back to default build directory.
 before_script:
@@ -94,8 +90,6 @@ script:
     - cd build
     - cmake -DFILTER_PROTO2CPP_PY_PATH=${DEPS_DIR}/proto2cpp ..
     # - sed '6iEXCLUDE   = "${TRAVIS_BUILD_DIR}/build"' Doxyfile > Doxyfile2 && mv Doxyfile2 Doxyfile
-    - ls
-    - pwd
     - echo "${TRAVIS_BUILD_DIR}/build"
     - doxygen
     - cd ..
