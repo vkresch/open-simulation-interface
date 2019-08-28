@@ -80,6 +80,7 @@ script:
     - echo "" >> VERSION
     - echo "VERSION_PATCH = \"GitHub_MasterBranch\"" >> VERSION
     - cd build
+    - pwd
     - cmake -DFILTER_PROTO2CPP_PY_PATH=${DEPS_DIR}/proto2cpp ..
     - doxygen
     - cd ..
