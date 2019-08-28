@@ -81,7 +81,10 @@ script:
     - echo "VERSION_PATCH = \"GitHub_MasterBranch\"" >> VERSION
     - cd build
     - cmake -DFILTER_PROTO2CPP_PY_PATH=${DEPS_DIR}/proto2cpp ..
-    - echo 'EXCLUDE   = "build"' >> Doxyfile
+    - sed '6iEXCLUDE   = "${TRAVIS_BUILD_DIR}/build"' Doxyfile > Doxyfile2 && mv Doxyfile2 Doxyfile
+    - ls
+    - pwd
+    - echo "${TRAVIS_BUILD_DIR}/build"
     - doxygen
     - cd ..
     - python test_cases_doc.py
