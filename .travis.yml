@@ -22,14 +22,6 @@ before_install:
     - DEPS_DIR="${HOME}/deps"
     - mkdir -p "${DEPS_DIR}"
     - cd "${DEPS_DIR}"
-    # - git clone https://github.com/doxygen/doxygen.git
-    # - cd doxygen
-    # - mkdir build
-    # - cd build
-    # - cmake -G "Unix Makefiles" ..
-    # - make
-    # - make install
-    # - sudo apt-get install -y doxygen-doc doxygen-latex doxygen-gui graphviz
 
 # Install necessary packages.
 install:
@@ -89,10 +81,10 @@ script:
     - echo "" >> VERSION
     - echo "VERSION_PATCH = \"GitHub_MasterBranch\"" >> VERSION
     - mkdir builddoxy
+    - ls
     - cd builddoxy
-    - cmake -DFILTER_PROTO2CPP_PY_PATH=${DEPS_DIR}/proto2cpp ..
+    - cmake -D CMAKE_PREFIX_PATH:PATH=${DEPS_DIR}/protobuf/install -D CMAKE_INSTALL_PREFIX:PATH=${TESTINST_DIR} -D FILTER_PROTO2CPP_PY_PATH=${DEPS_DIR}/proto2cpp ..
     # - sed '6iEXCLUDE   = "${TRAVIS_BUILD_DIR}/build"' Doxyfile > Doxyfile2 && mv Doxyfile2 Doxyfile
-    - echo "${TRAVIS_BUILD_DIR}/build"
     - cat Doxyfile
     - doxygen
     - cd ..
