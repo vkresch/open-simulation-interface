@@ -21,7 +21,14 @@ before_install:
     - DEPS_DIR="${HOME}/deps"
     - mkdir -p "${DEPS_DIR}"
     - cd "${DEPS_DIR}"
-    - sudo apt-get install -y doxygen doxygen-doc doxygen-latex doxygen-gui graphviz
+    - git clone https://github.com/doxygen/doxygen.git
+    - cd doxygen
+    - mkdir build
+    - cd build
+    - cmake -G "Unix Makefiles" ..
+    - make
+    - make install
+    - sudo apt-get install -y doxygen-doc doxygen-latex doxygen-gui graphviz
 
 # Install necessary packages.
 install:
