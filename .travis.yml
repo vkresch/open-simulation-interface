@@ -22,6 +22,9 @@ before_install:
     - DEPS_DIR="${HOME}/deps"
     - mkdir -p "${DEPS_DIR}"
     - cd "${DEPS_DIR}"
+    - sudo apt-get install python-pip python3-pip
+    - sudo pip install protobuf 
+    - sudo pip3 install protobuf 
 
 # Install necessary packages.
 install:
@@ -83,7 +86,7 @@ script:
     - mkdir builddoxy
     - ls
     - cd builddoxy
-    - cmake -D CMAKE_PREFIX_PATH:PATH=${DEPS_DIR}/protobuf/install -D CMAKE_INSTALL_PREFIX:PATH=${TESTINST_DIR} -D FILTER_PROTO2CPP_PY_PATH=${DEPS_DIR}/proto2cpp ..
+    - cmake -D FILTER_PROTO2CPP_PY_PATH=${DEPS_DIR}/proto2cpp ..
     # - sed '6iEXCLUDE   = "${TRAVIS_BUILD_DIR}/build"' Doxyfile > Doxyfile2 && mv Doxyfile2 Doxyfile
     - cat Doxyfile
     - doxygen

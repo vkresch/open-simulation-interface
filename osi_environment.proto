@@ -79,7 +79,7 @@ message EnvironmentalConditions
     //
     enum Precipitation
     {
-        // Intensity of precipitation is unknown (must not be used in ground
+        // asdasdIntensity of precipitation is unknown (must not be used in ground
         // truth).
         //
         PRECIPITATION_UNKNOWN = 0;
