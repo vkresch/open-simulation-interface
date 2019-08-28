@@ -86,7 +86,7 @@ script:
     - cd builddoxy
     - cmake -D FILTER_PROTO2CPP_PY_PATH=${DEPS_DIR}/proto2cpp -D CMAKE_PREFIX_PATH:PATH=${DEPS_DIR}/protobuf/install ..
     - sed '8iEXCLUDE_PATTERNS       = */build/*' Doxyfile > Doxyfile2 && mv Doxyfile2 Doxyfile
-    - sed '8iEXCLUDE_PATTERNS       = */builddoxy/*' Doxyfile > Doxyfile2 && mv Doxyfile2 Doxyfile
+    - sed '8iEXCLUDE_PATTERNS       += */builddoxy/*' Doxyfile > Doxyfile2 && mv Doxyfile2 Doxyfile
     # - echo 'EXTRACT_ALL = NO' >> Doxyfile
     # - echo 'HIDE_UNDOC_MEMBERS = YES' >> Doxyfile
     - cat Doxyfile
