@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['material_5fconcrete',['MATERIAL_CONCRETE',['../structosi3_1_1StationaryObject_1_1Classification.html#a355ae3da574e37c59e934583cd7ec4a4a49e20bf88569a36a999ac3efeacb6f52',1,'osi3::StationaryObject::Classification']]],
+  ['material_5fglas',['MATERIAL_GLAS',['../structosi3_1_1StationaryObject_1_1Classification.html#a355ae3da574e37c59e934583cd7ec4a4aa686c4a488ee693797ff667b79efee97',1,'osi3::StationaryObject::Classification']]],
+  ['material_5fmetal',['MATERIAL_METAL',['../structosi3_1_1StationaryObject_1_1Classification.html#a355ae3da574e37c59e934583cd7ec4a4a501392b8595c764a5fedb60ed48d82bf',1,'osi3::StationaryObject::Classification']]],
+  ['material_5fmud',['MATERIAL_MUD',['../structosi3_1_1StationaryObject_1_1Classification.html#a355ae3da574e37c59e934583cd7ec4a4a5ffba3ad0dfa132a78869d3886cb0f7f',1,'osi3::StationaryObject::Classification']]],
+  ['material_5fother',['MATERIAL_OTHER',['../structosi3_1_1StationaryObject_1_1Classification.html#a355ae3da574e37c59e934583cd7ec4a4a9781ebbd599c75ea002be8c16d0537d3',1,'osi3::StationaryObject::Classification']]],
+  ['material_5fplastic',['MATERIAL_PLASTIC',['../structosi3_1_1StationaryObject_1_1Classification.html#a355ae3da574e37c59e934583cd7ec4a4a029033327c12186faca846da9a360fc7',1,'osi3::StationaryObject::Classification']]],
+  ['material_5fstone',['MATERIAL_STONE',['../structosi3_1_1StationaryObject_1_1Classification.html#a355ae3da574e37c59e934583cd7ec4a4a3925230bb28811bb5406388dddafa1e3',1,'osi3::StationaryObject::Classification']]],
+  ['material_5funknown',['MATERIAL_UNKNOWN',['../structosi3_1_1StationaryObject_1_1Classification.html#a355ae3da574e37c59e934583cd7ec4a4a9425ff0f48f6a05e24a7af75e5ba1d3d',1,'osi3::StationaryObject::Classification']]],
+  ['material_5fwood',['MATERIAL_WOOD',['../structosi3_1_1StationaryObject_1_1Classification.html#a355ae3da574e37c59e934583cd7ec4a4a3b9fc8c44db8c8b91a96a24148edbfc5',1,'osi3::StationaryObject::Classification']]],
+  ['measurement_5fstate_5fmeasured',['MEASUREMENT_STATE_MEASURED',['../structosi3_1_1DetectedItemHeader.html#a3da007473f8976d9ae650a9b8a835078ab30c421be25e8158c810bff78b08fee1',1,'osi3::DetectedItemHeader']]],
+  ['measurement_5fstate_5fother',['MEASUREMENT_STATE_OTHER',['../structosi3_1_1DetectedItemHeader.html#a3da007473f8976d9ae650a9b8a835078a01740fbefb10073dbf2b593cb55aadd2',1,'osi3::DetectedItemHeader']]],
+  ['measurement_5fstate_5fpredicted',['MEASUREMENT_STATE_PREDICTED',['../structosi3_1_1DetectedItemHeader.html#a3da007473f8976d9ae650a9b8a835078a9f5193089e79583ed362e6ebd92a2838',1,'osi3::DetectedItemHeader']]],
+  ['measurement_5fstate_5funknown',['MEASUREMENT_STATE_UNKNOWN',['../structosi3_1_1DetectedItemHeader.html#a3da007473f8976d9ae650a9b8a835078a2c0f4ed120419b59ef59eea213fc1c0b',1,'osi3::DetectedItemHeader']]],
+  ['mode_5fconstant',['MODE_CONSTANT',['../structosi3_1_1TrafficLight_1_1Classification.html#ae107846d88eaa3dab95d3d931d73fa09ab55043621634f7bd34d16532598a6940',1,'osi3::TrafficLight::Classification']]],
+  ['mode_5fcounting',['MODE_COUNTING',['../structosi3_1_1TrafficLight_1_1Classification.html#ae107846d88eaa3dab95d3d931d73fa09adbd5d412d43876b9d79c8c4f9a57e4f6',1,'osi3::TrafficLight::Classification']]],
+  ['mode_5fflashing',['MODE_FLASHING',['../structosi3_1_1TrafficLight_1_1Classification.html#ae107846d88eaa3dab95d3d931d73fa09a5feffa6fe3e35b9048b4ac870f902aa1',1,'osi3::TrafficLight::Classification']]],
+  ['mode_5foff',['MODE_OFF',['../structosi3_1_1TrafficLight_1_1Classification.html#ae107846d88eaa3dab95d3d931d73fa09a51a3878ed6c3cd895b559e341b6dc68c',1,'osi3::TrafficLight::Classification']]],
+  ['mode_5fother',['MODE_OTHER',['../structosi3_1_1TrafficLight_1_1Classification.html#ae107846d88eaa3dab95d3d931d73fa09a941aaf884dc052d33c54d9da86d12d0c',1,'osi3::TrafficLight::Classification']]],
+  ['mode_5funknown',['MODE_UNKNOWN',['../structosi3_1_1TrafficLight_1_1Classification.html#ae107846d88eaa3dab95d3d931d73fa09a50510d0fa82682aec43aebfa594c42f8',1,'osi3::TrafficLight::Classification']]],
+  ['movement_5fstate_5fmoving',['MOVEMENT_STATE_MOVING',['../structosi3_1_1DetectedMovingObject.html#af837733436624206284d0121687c7787a31b36a2c3b1233275fc426085fafde8a',1,'osi3::DetectedMovingObject']]],
+  ['movement_5fstate_5fother',['MOVEMENT_STATE_OTHER',['../structosi3_1_1DetectedMovingObject.html#af837733436624206284d0121687c7787a8948b42fd199015dc7179ae26c4c0373',1,'osi3::DetectedMovingObject']]],
+  ['movement_5fstate_5fstationary',['MOVEMENT_STATE_STATIONARY',['../structosi3_1_1DetectedMovingObject.html#af837733436624206284d0121687c7787a3e40aad22a0e88151d7703bd94c93551',1,'osi3::DetectedMovingObject']]],
+  ['movement_5fstate_5fstopped',['MOVEMENT_STATE_STOPPED',['../structosi3_1_1DetectedMovingObject.html#af837733436624206284d0121687c7787a86cb15fe650763639e85183f839198ed',1,'osi3::DetectedMovingObject']]],
+  ['movement_5fstate_5funknown',['MOVEMENT_STATE_UNKNOWN',['../structosi3_1_1DetectedMovingObject.html#af837733436624206284d0121687c7787ab7dd626869e37c68418528614e38eb9a',1,'osi3::DetectedMovingObject']]]
+];
