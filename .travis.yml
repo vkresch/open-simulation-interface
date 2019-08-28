@@ -21,13 +21,17 @@ before_install:
     - DEPS_DIR="${HOME}/deps"
     - mkdir -p "${DEPS_DIR}"
     - cd "${DEPS_DIR}"
-    - git clone https://github.com/doxygen/doxygen.git
-    - cd doxygen
+    - wget http://doxygen.nl/files/doxygen-1.8.16.linux.bin.tar.gz
+    - gunzip doxygen-1.8.16.linux.bin.tar.gz
+    - tar xf doxygen-1.8.16.linux.bin.tar
+    - cd doxygen-1.8.16/
     - mkdir build
     - cd build
     - cmake -G "Unix Makefiles" ..
+    - cmake -L ..
     - make
-    - make install
+    - ./configure
+    - make install    
     - sudo apt-get install -y doxygen-doc doxygen-latex doxygen-gui graphviz
 
 # Install necessary packages.
