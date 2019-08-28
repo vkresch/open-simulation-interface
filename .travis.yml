@@ -9,10 +9,10 @@ compiler:
     - gcc
 
 # Cache dependencies to speed up the build.
-cache:
-    directories:
-        - ${HOME}/deps/cmake
-        - ${HOME}/deps/protobuf
+# cache:
+#     directories:
+#         - ${HOME}/deps/cmake
+#         - ${HOME}/deps/protobuf
 #        - ${HOME}/deps/proto2cpp
 
 # Handle dependencies in separate directory.
@@ -22,8 +22,7 @@ before_install:
     - DEPS_DIR="${HOME}/deps"
     - mkdir -p "${DEPS_DIR}"
     - cd "${DEPS_DIR}"
-    - sudo apt-get install python3-pip
-    - sudo pip3 install protobuf==3.2.0
+    - sudo apt-get install protobuf-compiler
 
 # Install necessary packages.
 install:
