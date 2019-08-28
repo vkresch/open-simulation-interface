@@ -80,8 +80,9 @@ script:
     - echo "" >> VERSION
     - echo "VERSION_PATCH = \"GitHub_MasterBranch\"" >> VERSION
     - cd build
-    - cmake -D FILTER_PROTO2CPP_PY_PATH=${DEPS_DIR}/proto2cpp ..
-    - make
+    - cmake -DFILTER_PROTO2CPP_PY_PATH=${DEPS_DIR}/proto2cpp ..
+    - echo 'EXCLUDE   = "build"' >> Doxyfile
+    - doxygen
     - cd ..
     - python test_cases_doc.py
     - mv VERSION.SAVED VERSION
