@@ -1,4 +1,6 @@
 # Source: https://github.com/boostorg/hana/blob/master/.travis.yml
+
+# Distribution Ubuntu 18.04 Bionic
 dist: bionic
 
 # Use C++ build environment.
@@ -13,7 +15,7 @@ cache:
     directories:
         - ${HOME}/deps/cmake
         - ${HOME}/deps/protobuf
-        # - ${HOME}/deps/proto2cpp
+#        - ${HOME}/deps/proto2cpp
 
 # Handle dependencies in separate directory.
 before_install:
@@ -42,7 +44,6 @@ install:
         PROTO2CPP_URL="https://github.com/OpenSimulationInterface/proto2cpp.git"
         if [ ! -f ${DEPS_DIR}/proto2cpp ] ; then mkdir -p proto2cpp ; git clone ${PROTO2CPP_URL} ${DEPS_DIR}/proto2cpp ; fi
 
-
 # Environment variables.
 env:
   global:
@@ -66,7 +67,6 @@ before_script:
 
 # Run the build script and generate documentation.
 script:
-    - pwd
     - mkdir -p build
     - cd build
     - cmake -D CMAKE_PREFIX_PATH:PATH=${DEPS_DIR}/protobuf/install -D CMAKE_INSTALL_PREFIX:PATH=${TESTINST_DIR} ..
@@ -81,29 +81,26 @@ script:
     - cp VERSION VERSION.SAVED
     - echo "" >> VERSION
     - echo "VERSION_PATCH = \"GitHub_MasterBranch\"" >> VERSION
-    - mkdir builddoxy
-    - ls
-    - cd builddoxy
-    - cmake -D FILTER_PROTO2CPP_PY_PATH=${DEPS_DIR}/proto2cpp -D CMAKE_PREFIX_PATH:PATH=${DEPS_DIR}/protobuf/install ..
-    - sed '8iEXCLUDE_PATTERNS       = */osi3/*' Doxyfile > Doxyfile2 && mv Doxyfile2 Doxyfile
-    - cat Doxyfile
+    - cd build
+    - cmake -D FILTER_PROTO2CPP_PY_PATH=${DEPS_DIR}/proto2cpp ..
+    - echo "EXCLUDE_PATTERNS = */osi3/*" >> Doxyfile
     - doxygen
     - cd ..
     - python test_cases_doc.py
     - mv VERSION.SAVED VERSION
     - sh convert-to-proto3.sh
-    # - mkdir -p build3
-    # - cd build3
-    # - cmake -D CMAKE_PREFIX_PATH:PATH=${DEPS_DIR}/protobuf/install ..
-    # - cmake --build .
-    # - cd ..
+    - mkdir -p build3
+    - cd build3
+    - cmake -D CMAKE_PREFIX_PATH:PATH=${DEPS_DIR}/protobuf/install ..
+    - cmake --build .
+    - cd ..
 
 # Deploy the documentation on github (only for master branch).
 deploy:
     provider: pages
     skip_cleanup: true
     local_dir: doc/html
-    keep_history: true
+    keep-history: true
     github_token: ${GH_REPO_TOKEN}
     on: 
       branch: master 
