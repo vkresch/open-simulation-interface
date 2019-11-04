@@ -65,7 +65,8 @@ addons:
 jobs:
   include:    
     # Run the build script and generate documentation.
-    - stage: test_protos
+    - stage: test protobuf versions
+
       name: 'Test protobuf 3'
       script:
           - cd "${TRAVIS_BUILD_DIR}"
@@ -97,8 +98,7 @@ jobs:
           - cmake --build .
           - cd ..
       
-      name: 'Test protobuf 2'
-      script:
+    - script:
           - cd "${TRAVIS_BUILD_DIR}"
           - bash convert-to-proto3.sh
           - mkdir -p build
@@ -120,7 +120,6 @@ jobs:
           - echo "GENERATE_TREEVIEW = YES" >> Doxyfile
           - doxygen
           - cd ..
-          - python -m unittest discover tests
           - mv VERSION.SAVED VERSION
           - sh convert-to-proto3.sh
           - mkdir -p build3
@@ -128,6 +127,7 @@ jobs:
           - cmake -D CMAKE_PREFIX_PATH:PATH=${DEPS_DIR}/protobuf/install ..
           - cmake --build .
           - cd ..
+      name: 'Test protobuf 2'
 
     - stage: deploy
       script:
