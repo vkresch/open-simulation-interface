@@ -122,3 +122,4 @@ $ cd open-simulation-interface
 $ sudo pip3 install .
 ```
 For Windows installation see [here](https://opensimulationinterface.github.io/osi-documentation/osi/windows.html) for more information.
+
