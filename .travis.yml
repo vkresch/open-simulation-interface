@@ -63,14 +63,12 @@ addons:
 
 jobs:
   include:
-    - stage: "Test"
     # Change directory back to default build directory.
     before_script:
         - cd "${TRAVIS_BUILD_DIR}"
 
     # Run the build script and generate documentation.
-    name: "Protobuf 2" 
-    script:
+    - script:
         - mkdir -p build
         - cd build
         - cmake -D CMAKE_PREFIX_PATH:PATH=${DEPS_DIR}/protobuf/install -D CMAKE_INSTALL_PREFIX:PATH=${TESTINST_DIR} ..
@@ -128,17 +126,14 @@ jobs:
         - cmake -D CMAKE_PREFIX_PATH:PATH=${DEPS_DIR}/protobuf/install ..
         - cmake --build .
         - cd ..
-    name: "Protobuf 3"
 
    
-    - stage: deploy
-    name: "Deploy documentation to GH-Pages"
     # Deploy the documentation on github (only for master branch).
-    deploy:
-        provider: pages
-        skip_cleanup: true
-        local_dir: doc/html
-        keep-history: true
-        github_token: ${GH_REPO_TOKEN}
-        on: 
-        branch: master 
+deploy:
+    provider: pages
+    skip_cleanup: true
+    local_dir: doc/html
+    keep-history: true
+    github_token: ${GH_REPO_TOKEN}
+    on: 
+    branch: master 
