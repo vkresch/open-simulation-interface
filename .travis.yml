@@ -98,7 +98,7 @@ jobs:
           - cmake --build .
           - cd ..
       
-      name: 'Test protobuf 3.0.0 syntax'
+      - name: 'Test protobuf 3.0.0 syntax'
       script:
           - cd "${TRAVIS_BUILD_DIR}"
           - bash convert-to-proto3.sh
@@ -130,7 +130,7 @@ jobs:
           - cmake -D CMAKE_PREFIX_PATH:PATH=${DEPS_DIR}/protobuf/install ..
           - cmake --build .
           - cd ..
-      
+
 
     - stage: deploy
       script:
