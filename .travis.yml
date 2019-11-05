@@ -100,7 +100,7 @@ jobs:
       
     - script:
           - cd "${TRAVIS_BUILD_DIR}"
-          - bash convert-to-proto3.
+          - bash convert-to-proto3.sh
           - rm *.pb2
           - mkdir -p build
           - cd build
