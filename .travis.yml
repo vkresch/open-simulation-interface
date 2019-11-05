@@ -99,7 +99,7 @@ jobs:
           - cd ..
       
       - name: 'Test protobuf 3.0.0 syntax'
-      script:
+        script:
           - cd "${TRAVIS_BUILD_DIR}"
           - bash convert-to-proto3.sh
           - rm *.pb2
