@@ -65,7 +65,7 @@ addons:
 jobs:
   include:    
     # Run the build script and generate documentation.
-    - stage: test protobuf versions 2
+    - stage: test OSI protobuf
 
       name: 'Test protobuf 2.6.1 syntax'
       script:
@@ -100,7 +100,8 @@ jobs:
       
     - script:
           - cd "${TRAVIS_BUILD_DIR}"
-          - bash convert-to-proto3.sh
+          - bash convert-to-proto3.
+          - rm *.pb2
           - mkdir -p build
           - cd build
           - cmake -D CMAKE_PREFIX_PATH:PATH=${DEPS_DIR}/protobuf/install -D CMAKE_INSTALL_PREFIX:PATH=${TESTINST_DIR} ..
